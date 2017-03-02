@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false" preserve-order="true">
+
+	<test name="Test1">
+		<classes>
+			<class name="com.lee.demo.testng.TestNGDemo" />
+			<parameter name="user" value="kb" />
+			<methods>
+				<include name="test0" />
+				<include name="test1" />
+				<include name="test2" />
+				<include name="test3" />
+				<include name="test5" />
+				<include name="test4" />
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test2">
+		<groups>
+			<define name="testGroup12">
+				<include name="testGroup1" />
+				<include name="testGroup2" />
+			</define>
+			<define name="testGroup3">
+				<include name="testGroup3" />
+			</define>
+			<run>
+				<include name="testGroup12" />
+				<exclude name="testGroup3" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.lee.demo.testng.TestNGDemo" />
+		</classes>
+	</test>
+
+</suite> 
+
